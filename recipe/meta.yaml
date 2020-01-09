@@ -1,4 +1,4 @@
-{% set version = '0.2-5' %}
+{% set version = "0.2-6" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/wordspace_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/wordspace/wordspace_{{ version }}.tar.gz
-  sha256: d7278a7b466028caf613bd0712e8738b983c656b442b91cc698db70a0bfe36f7
+  sha256: 742afeb4cc0f9ac4b6b5a8f53a46d432bd9ee9b668e4df45e3748ad07e3dc587
 
 build:
   merge_build_host: True  # [win]
