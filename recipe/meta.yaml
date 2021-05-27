@@ -15,7 +15,7 @@ source:
 
 build:
   merge_build_host: True  # [win]
-  number: 1
+  number: 2
 
   # This is required to make R link correctly on Linux.
   rpaths:
@@ -63,7 +63,7 @@ test:
 
 about:
   home: http://wordspace.r-forge.r-project.org/
-  license: GPL-3
+  license: GPL-3.0-only
   summary: An interactive laboratory for research on distributional semantic models ('DSM', see
     <https://en.wikipedia.org/wiki/Distributional_semantics> for more information).
   license_family: GPL3
