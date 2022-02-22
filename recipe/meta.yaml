@@ -1,4 +1,4 @@
-{% set version = "0.2-6" %}
+{% set version = "0.2-7" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -11,11 +11,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/wordspace_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/wordspace/wordspace_{{ version }}.tar.gz
-  sha256: 742afeb4cc0f9ac4b6b5a8f53a46d432bd9ee9b668e4df45e3748ad07e3dc587
+  sha256: ce5f4feb82543d0a435867503e8489455bdf3422e2da2339a1fc9da76ad93243
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
 
   # This is required to make R link correctly on Linux.
   rpaths:
@@ -64,13 +64,12 @@ test:
 about:
   home: http://wordspace.r-forge.r-project.org/
   license: GPL-3.0-only
-  summary: An interactive laboratory for research on distributional semantic models ('DSM', see
-    <https://en.wikipedia.org/wiki/Distributional_semantics> for more information).
+  summary: An interactive laboratory for research on distributional semantic models ('DSM', see <https://en.wikipedia.org/wiki/Distributional_semantics> for more information).
   license_family: GPL3
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
-    recipe-maintainers:
-        - conda-forge/r
-        - tdido
+  recipe-maintainers:
+    - conda-forge/r
+    - tdido
