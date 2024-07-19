@@ -1,7 +1,6 @@
 {% set version = "0.2-8" %}
 
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-wordspace
@@ -14,8 +13,7 @@ source:
   sha256: 627d6836e7a6cc4c4dcc690e0dfd0cd069e58de9003c3a66149b4e9d3f69d89d
 
 build:
-  merge_build_host: true  # [win]
-  number: 2
+  number: 3
 
   # This is required to make R link correctly on Linux.
   rpaths:
@@ -26,7 +24,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -47,7 +47,6 @@ requirements:
 
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-mass
     - r-matrix
     - r-rcpp >=0.11.0
