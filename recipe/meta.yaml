@@ -1,4 +1,4 @@
-{% set version = "0.2-8" %}
+{% set version = "0.2-9" %}
 
 {% set posix = 'm2-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/wordspace_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/wordspace/wordspace_{{ version }}.tar.gz
-  sha256: 627d6836e7a6cc4c4dcc690e0dfd0cd069e58de9003c3a66149b4e9d3f69d89d
+  sha256: 121efed3eccec88d2f3422553506e3a1f23bd74d3da6143dd9ca8906f9848f5b
 
 build:
-  number: 3
+  number: 0
 
   # This is required to make R link correctly on Linux.
   rpaths:
