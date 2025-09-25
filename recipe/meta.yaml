@@ -13,7 +13,7 @@ source:
   sha256: 121efed3eccec88d2f3422553506e3a1f23bd74d3da6143dd9ca8906f9848f5b
 
 build:
-  number: 0
+  number: 1
 
   # This is required to make R link correctly on Linux.
   rpaths:
